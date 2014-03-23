@@ -1,6 +1,6 @@
 <?php
 
-define('NGN_PATH', '/home/user/ngn-env/ngn');//
+define('NGN_PATH', '/home/user/ngn-env/ngn');///
 define('SITE_PATH', __DIR__.'/site');
 define('WEBROOT_PATH', __DIR__);
 
