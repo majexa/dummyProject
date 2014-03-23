@@ -18,7 +18,6 @@ if (strstr($_SERVER['argv'][1], '(')) { // eval
   return;
 }
 
-$quietly = isset($_SERVER['argv'][1]) and $_SERVER['argv'][1] == 'quietly';
 if (isset($_SERVER['argv'][1])) {
   $found = false;
   foreach (Ngn::$basePaths as $path) {
@@ -30,5 +29,5 @@ if (isset($_SERVER['argv'][1])) {
     }
   }
 }
-if (!$found and !$quietly) throw new NotFoundException($_SERVER['argv'][1]);
-else output(PROJECT_KEY.':'.$_SERVER['argv'][1].' not found');
+if (!$found) throw new NotFoundException($_SERVER['argv'][1]);
+
