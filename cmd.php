@@ -8,6 +8,8 @@ require_once NGN_PATH.'/init/core.php';
 $projects = require dirname(NGN_PATH).'/config/projects.php';
 define('SITE_DOMAIN', Arr::getSubValue($projects, 'name', basename(__DIR__), 'domain'));
 
+$quietly = (isset($_SERVER['argv'][2]) and $_SERVER['argv'][2] == 'quietly');
+
 require_once NGN_PATH.'/init/site-cli.php';
 if (file_exists(SITE_PATH.'/init.php')) require SITE_PATH.'/init.php';
 
@@ -29,5 +31,5 @@ if (isset($_SERVER['argv'][1])) {
     }
   }
 }
-if (!$found) throw new NotFoundException($_SERVER['argv'][1]);
 
+if (!$found and !$quietly) throw new NotFoundException($_SERVER['argv'][1]);
