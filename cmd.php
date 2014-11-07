@@ -25,7 +25,10 @@ if (isset($_SERVER['argv'][1])) {
   foreach (Ngn::$basePaths as $path) {
     $file = "$path/cmd/{$_SERVER['argv'][1]}.php";
     if (file_exists($file)) {
+      ob_start();
       require $file;
+      $c = ob_get_clean();
+      LogWriter::html('cmd', $file.":<br><pre>$c</pre>");
       $found = true;
       break;
     }
