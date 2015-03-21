@@ -22,6 +22,10 @@ if (strstr($_SERVER['argv'][1], '(')) { // eval
   return;
 }
 
+if (isset($_SERVER['argv'][2]) and strstr($_SERVER['argv'][2], '=')) {
+  R::set('options', Cli::strParamsToArray($_SERVER['argv'][2]));
+}
+
 $found = false;
 foreach (Ngn::$basePaths as $path) {
   $file = "$path/cmd/{$_SERVER['argv'][1]}.php";
