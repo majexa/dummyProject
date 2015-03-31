@@ -12,4 +12,4 @@ require_once PROJECT_PATH.'/config/constants/core.php';
 require_once NGN_PATH.'/init/site-web.php';
 if (file_exists(PROJECT_PATH.'/init.php')) require PROJECT_PATH.'/init.php';
 
-print (new RouterManager)->router()->dispatch()->getOutput();
+print O::di('RouterManager')->router()->dispatch()->getOutput();
