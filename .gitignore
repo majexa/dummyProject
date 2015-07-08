@@ -1,1 +1,4 @@
 .idea
+/cmd.php
+/index.php
+/queue.php
