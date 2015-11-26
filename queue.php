@@ -3,7 +3,7 @@
 
 // queue manager //
 
-define('NGN_PATH', '/home/user/ngn-env/ngn');
+define('NGN_PATH', dirname(dirname(__DIR__)).'/ngn');
 define('PROJECT_PATH', __DIR__.'/site');
 
 define('WEBROOT_PATH', __DIR__);
